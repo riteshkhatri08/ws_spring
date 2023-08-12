@@ -2,6 +2,7 @@ package com.ritesh.springapp.hello.app.controllers;
 
 import static org.junit.jupiter.api.Assertions.assertNotNull;
 import static org.springframework.test.web.servlet.request.MockMvcRequestBuilders.get;
+import static org.springframework.test.web.servlet.result.MockMvcResultHandlers.print;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.model;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.status;
 import static org.springframework.test.web.servlet.result.MockMvcResultMatchers.view;
@@ -35,6 +36,7 @@ public class HelloControllerMockMVCTest {
 
         RequestBuilder builder = get("/hello").accept(MediaType.TEXT_HTML);
         mockMvc.perform(builder)
+                .andDo(print())
                 .andExpect(status().isOk())
                 .andExpect(view().name("welcome"))
                 .andExpect(model().attribute("user", "World"));

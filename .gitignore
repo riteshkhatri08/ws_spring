@@ -1,6 +1,3 @@
 .vscode/
-hello/hello/logs/app.log/spring.log
-hello/logs/app.log/spring.log
 HELP.md
-hello/target/
-hello/.mvn/wrapper/maven-wrapper.jar
+
